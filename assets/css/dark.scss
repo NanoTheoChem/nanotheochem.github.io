@@ -1,0 +1,7 @@
+---
+# Dark stylesheet -> /assets/css/dark.css  (loaded alongside main.css, toggled at runtime)
+---
+@charset "utf-8";
+
+@import "minimal-mistakes/skins/{{ site.minimal_mistakes_dark_skin | default: 'dark' }}";
+@import "minimal-mistakes";

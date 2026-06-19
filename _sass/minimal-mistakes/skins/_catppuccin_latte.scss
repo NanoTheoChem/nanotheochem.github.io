@@ -1,0 +1,22 @@
+/* ==========================================================================
+   Catppuccin Latte — light skin for Minimal Mistakes
+   Palette: https://catppuccin.com   •   accent: blue
+   Change the accent by swapping the blue hex (#1e66f5) below.
+   ========================================================================== */
+
+$background-color:        #eff1f5 !default; // base
+$text-color:              #4c4f69 !default; // text
+$muted-text-color:        #6c6f85 !default; // subtext0
+$primary-color:           #1e66f5 !default; // blue
+$border-color:            #ccd0da !default; // surface0
+$footer-background-color: #e6e9ef !default; // mantle
+$link-color:              #1e66f5 !default; // blue
+$link-color-hover:        #7287fd !default; // lavender
+$link-color-visited:      #8839ef !default; // mauve
+$masthead-link-color:       $text-color !default;
+$masthead-link-color-hover: #1e66f5 !default;
+$navicon-link-color-hover:  mix(#000, $background-color, 8%) !default;
+$code-background-color:     #e6e9ef !default; // mantle
+$form-background-color:     #e6e9ef !default;
+
+.page__footer { color: $muted-text-color !important; }

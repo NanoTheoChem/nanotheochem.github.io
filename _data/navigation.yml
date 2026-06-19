@@ -1,0 +1,16 @@
+# Top navbar (the `main` list). External links open THE GRID.
+main:
+  - title: "About"
+    url: /
+  - title: "Research"
+    url: /research/
+  - title: "Publications"
+    url: /publications/
+  - title: "Blog"
+    url: /blog/
+  - title: "CV"
+    url: /assets/pdf/cv.pdf
+  - title: "Contact"
+    url: /contact/
+  - title: 'THE GRID (soon) <img src="/assets/images/the-grid-icon.jpg" alt="" style="height:2em;width:auto;border-radius:3px;vertical-align:middle;margin-left:0.4em">'
+    url: "#"

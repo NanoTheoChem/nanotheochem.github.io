@@ -1,0 +1,96 @@
+<!-- _includes/head/custom.html — injected into <head> on every page. -->
+
+<!-- Academicons: Google Scholar / ORCID glyphs used in author links -->
+<link rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+
+<!-- ==========================================================================
+     MathJax 3.  Authoring rule: write ALL math with $$ ... $$
+       inline  : keep it inside a paragraph
+       display : put it on its own line
+     kramdown rewrites $$..$$ to \(..\)/\[..\]; MathJax renders both.
+     Avoid single $...$ . Inside math prefer \lvert \rvert over a bare |.
+=========================================================================== -->
+<script>
+  window.MathJax = {
+    tex: {
+      inlineMath:  [['\\(', '\\)']],
+      displayMath: [['$$', '$$'], ['\\[', '\\]']],
+      processEscapes: true,
+      tags: 'ams'
+    },
+    options: {
+      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+  };
+</script>
+<script async id="MathJax-script"
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<!-- ============================ Light / dark theme ============================
+     dark.css auto-applies when the OS prefers dark; the floating button and a
+     localStorage flag override that. main.css (the light skin) is loaded by the
+     theme just above this file, so dark.css — loaded after — wins when active.
+=========================================================================== -->
+<link id="theme-dark" rel="stylesheet"
+      href="{{ '/assets/css/dark.css' | relative_url }}"
+      media="(prefers-color-scheme: dark)">
+
+<script>
+  /* apply a saved manual choice before first paint (prevents a flash) */
+  (function () {
+    try {
+      var saved = localStorage.getItem('theme');           // 'dark' | 'light' | null
+      var link  = document.getElementById('theme-dark');
+      if (saved === 'dark')  link.media = 'all';
+      if (saved === 'light') link.media = 'not all';
+    } catch (e) {}
+  })();
+</script>
+
+<style>
+  #theme-toggle{
+    position:fixed; right:1rem; bottom:1rem; z-index:1000;
+    display:flex; align-items:center; justify-content:center;
+    width:2.75rem; height:2.75rem; padding:0; border-radius:50%;
+    border:1px solid rgba(128,128,128,.35);
+    background:rgba(127,127,127,.14); color:inherit;
+    font-size:1.15rem; line-height:1; cursor:pointer;
+    -webkit-backdrop-filter:blur(4px); backdrop-filter:blur(4px);
+    transition:background .15s ease;
+  }
+  #theme-toggle:hover{ background:rgba(127,127,127,.28); }
+  #theme-toggle:focus-visible{ outline:2px solid currentColor; outline-offset:2px; }
+  @media (prefers-reduced-motion: reduce){ #theme-toggle{ transition:none; } }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var link = document.getElementById('theme-dark');
+    var mql  = window.matchMedia('(prefers-color-scheme: dark)');
+    function isDark(){
+      if (link.media === 'all')     return true;   // forced dark
+      if (link.media === 'not all') return false;  // forced light
+      return mql.matches;                           // following the OS
+    }
+    var btn = document.createElement('button');
+    btn.id = 'theme-toggle';
+    btn.type = 'button';
+    btn.setAttribute('aria-label', 'Toggle dark mode');
+    btn.title = 'Toggle light / dark';
+    function render(){ btn.textContent = isDark() ? '\u2600' : '\u263E'; } // sun / moon
+    btn.addEventListener('click', function () {
+      var dark = !isDark();
+      link.media = dark ? 'all' : 'not all';
+      try { localStorage.setItem('theme', dark ? 'dark' : 'light'); } catch (e) {}
+      render();
+    });
+    render();
+    document.body.appendChild(btn);
+  });
+</script>
+
+<style>
+  /* Justify body prose */
+  .page__content p { text-align: justify; hyphens: auto; }
+</style>

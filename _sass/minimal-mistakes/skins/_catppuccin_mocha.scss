@@ -1,0 +1,26 @@
+/* ==========================================================================
+   Catppuccin Mocha — dark skin for Minimal Mistakes
+   Palette: https://catppuccin.com   •   accent: blue
+   Change the accent by swapping the blue hex (#89b4fa) below.
+   ========================================================================== */
+
+$background-color:        #1e1e2e !default; // base
+$text-color:              #cdd6f4 !default; // text
+$muted-text-color:        #a6adc8 !default; // subtext0
+$primary-color:           #89b4fa !default; // blue
+$border-color:            #313244 !default; // surface0
+$footer-background-color: #181825 !default; // mantle
+$link-color:              #89b4fa !default; // blue
+$link-color-hover:        #b4befe !default; // lavender
+$link-color-visited:      #cba6f7 !default; // mauve
+$masthead-link-color:       $text-color !default;
+$masthead-link-color-hover: #89b4fa !default;
+$navicon-link-color-hover:  mix(#fff, $background-color, 8%) !default;
+$code-background-color:     #181825 !default; // mantle
+$form-background-color:     #181825 !default;
+
+.page__footer { color: $muted-text-color !important; }
+
+/* keep social icons and footer text legible on the dark base */
+.author__urls.social-icons i,
+.page__footer-follow .social-icons i { color: inherit; }

@@ -1,0 +1,111 @@
+# ============================================================================
+#  _config.yml — Minimal Mistakes (remote theme).
+# ============================================================================
+
+# --- Theme ------------------------------------------------------------------
+remote_theme: "mmistakes/minimal-mistakes@4.28.0"   # pin to latest 4.x tag
+minimal_mistakes_skin:      "catppuccin_latte"
+minimal_mistakes_dark_skin: "catppuccin_mocha"
+
+# --- Site -------------------------------------------------------------------
+locale: "en-US"
+title: "Axel Gaona Carranza"
+title_separator: "·"
+name: "Axel M. Gaona Carranza"
+description: >
+  Computational materials scientist & condensed-matter physicist
+  (Mendoza-Cortés Group, MSU). DFT, beyond-DFT, phonons, magnetism, chiral matter.
+url: "https://nanotheochem.github.io"
+baseurl: ""
+repository: "nanotheochem/nanotheochem.github.io"
+words_per_minute: 180
+# masthead_title: "Axel Gaona"   # uncomment to override the navbar title
+
+# --- Author sidebar ---------------------------------------------------------
+author:
+  name: "Axel M. Gaona Carranza"
+  avatar: "/assets/images/bio-photo.jpg"   # add a square photo here
+  bio: >
+    Computational materials science DFT, phonons, magnetism, chiral matter.
+    Mendoza-Cortés Group, Michigan State University.
+  location: "Saltillo, México"
+  # NB: leave author.email empty; the Email icon is in `links` below to avoid a duplicate
+  links:
+    - label: "Email"
+      icon: "fas fa-fw fa-envelope-square"
+      url: "mailto:g6_gaon17@ens.cnyn.unam.mx"      # TODO: preferred (MSU) address
+    - label: "Google Scholar"
+      icon: "ai ai-google-scholar"                  # academicons (loaded in head/custom.html)
+      url: "https://scholar.google.com/citations?user=jkDsR9sAAAAJ"
+    - label: "ORCID"
+      icon: "ai ai-orcid"
+      url: "https://orcid.org/0000-0001-5911-1512"
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/NanoTheoChem"
+
+# --- Footer -----------------------------------------------------------------
+footer:
+  links:
+    - label: "Google Scholar"
+      icon: "ai ai-google-scholar"
+      url: "https://scholar.google.com/citations?user=jkDsR9sAAAAJ"
+    - label: "ORCID"
+      icon: "ai ai-orcid"
+      url: "https://orcid.org/0000-0001-5911-1512"
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/NanoTheoChem"
+
+# --- Reading files ----------------------------------------------------------
+include: ["_pages"]
+exclude: ["tools", "_bibliography", "Gemfile", "Gemfile.lock", "README.md", "vendor"]
+
+# --- Conversion / Markdown --------------------------------------------------
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  input: GFM
+  hard_wrap: false
+  auto_ids: true
+  syntax_highlighter: rouge
+# NB: do NOT set math_engine here. On GitHub Pages, kramdown converts $$...$$
+# into \(...\) / \[...\] which MathJax 3 renders (see _includes/head/custom.html).
+
+# --- Output / permalinks ----------------------------------------------------
+permalink: /:categories/:title/
+timezone: America/Mexico_City
+
+# --- Plugins (GitHub Pages whitelist-safe) ----------------------------------
+plugins:
+  - jekyll-feed
+  - jekyll-include-cache
+  - jekyll-sitemap
+whitelist:
+  - jekyll-feed
+  - jekyll-include-cache
+  - jekyll-sitemap
+
+# --- Site-wide front-matter defaults ----------------------------------------
+defaults:
+  # blog posts
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: single
+      author_profile: true
+      read_time: true
+      share: true
+      related: true
+      show_date: true
+      comments: false
+      toc: true
+      toc_sticky: true
+  # pages
+  - scope:
+      path: "_pages"
+      type: pages
+    values:
+      layout: single
+      author_profile: true

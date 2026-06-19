@@ -1,0 +1,61 @@
+---
+permalink: /publications/
+title: "Publications"
+excerpt: "Peer-reviewed articles, newest first."
+layout: single
+author_profile: true
+toc: false
+---
+
+<style>
+  .pub-list { list-style: none; padding-left: 0; }
+  .pub-item { display: flex; gap: 1rem; align-items: flex-start; margin-bottom: 1.6em; }
+  .pub-thumb { flex: 0 0 150px; }
+  .pub-thumb img {
+    width: 150px; height: auto; display: block;
+    border: 1px solid rgba(128,128,128,.35); border-radius: 4px; background: rgba(128,128,128,.06);
+  }
+  .pub-body { flex: 1 1 auto; min-width: 0; }
+  .pub-body pre { white-space: pre-wrap; }
+  @media (max-width: 600px) {
+    .pub-item { flex-direction: column; gap: .5rem; }
+    .pub-thumb { flex-basis: auto; }
+    .pub-thumb img { width: 100%; max-width: 260px; }
+  }
+</style>
+
+<p>Peer-reviewed articles, newest first — generated from
+<code>_bibliography/papers.bib</code> via <code>tools/bib2yml.py</code>.
+<sup>★</sup> marks selected work. See also
+<a href="https://scholar.google.com/citations?user=jkDsR9sAAAAJ" rel="noopener">Google Scholar</a>.</p>
+
+{% assign pubs = site.data.publications | sort: "year" | reverse %}
+{% assign years = pubs | map: "year" | uniq %}
+
+{% for y in years %}
+  <h2 id="y{{ y }}">{{ y }}</h2>
+  <ul class="pub-list">
+  {% for p in pubs %}{% if p.year == y %}
+    <li class="pub-item" id="{{ p.key }}">
+      {% if p.preview %}
+      <div class="pub-thumb">
+        <img src="{{ '/assets/images/publications/' | append: p.preview | relative_url }}"
+             alt="Figure from {{ p.title | escape }}" loading="lazy">
+      </div>
+      {% endif %}
+      <div class="pub-body">
+        {{ p.authors }}.
+        <strong>{{ p.title }}</strong>.
+        <em>{{ p.venue }}</em>{% if p.year %}, {{ p.year }}{% endif %}.{% if p.selected %} <sup title="selected">★</sup>{% endif %}
+        {% if p.url %}<br><a href="{{ p.url }}" rel="noopener">{% if p.doi %}doi:{{ p.doi }}{% else %}link{% endif %}</a>{% endif %}
+        {% if p.bibtex %}
+        <details style="margin-top:.35em;">
+          <summary style="cursor:pointer;">BibTeX</summary>
+          <pre><code>{{ p.bibtex | xml_escape }}</code></pre>
+        </details>
+        {% endif %}
+      </div>
+    </li>
+  {% endif %}{% endfor %}
+  </ul>
+{% endfor %}
