@@ -53,5 +53,5 @@ matrix (phonons), and machine-learned interatomic potentials for accelerated scr
 ---
 
 For the formal write-ups behind some of this — spin-wave theory, the acoustic sum rule,
-density-driven error — see the **THE GRID *(coming soon)*** ↗.
+density-driven error — see the **[THE GRID](https://nanotheochem.github.io/the-grid/)** ↗.
 A full list of publications is on the **[publications page](/publications/)**.

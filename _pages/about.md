@@ -12,7 +12,7 @@ Concretely, I work on **2D materials and heterostructures** (defects and phonons
 
 Before MSU I completed an Erasmus Mundus MSc in Theoretical Chemistry and Computational Modelling at the **University of Valencia**, with research stays at the **Zernike Institute (Groningen)** and **ICMol (València)**, and a BSc in Nanotechnology at **CNyN-UNAM**. Day to day I live in CRYSTAL23, Quantum ESPRESSO, VASP, phonopy, Wannier90, TB2J, UppASD, and a fair amount of Python and bash on SLURM.
 
-My longer-form technical notes live in a separate **THE GRID *(coming soon)*** ↗. If our interests overlap, please [get in touch](/contact/).
+My longer-form technical notes live in a separate [THE GRID](https://nanotheochem.github.io/the-grid/) ↗. If our interests overlap, please [get in touch](/contact/).
 
 ## News
 

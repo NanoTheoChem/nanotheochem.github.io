@@ -8,9 +8,7 @@ main:
     url: /publications/
   - title: "Blog"
     url: /blog/
-  - title: "CV"
-    url: /assets/pdf/cv.pdf
   - title: "Contact"
     url: /contact/
-  - title: 'THE GRID (soon) <img src="/assets/images/the-grid-icon.jpg" alt="" style="height:2em;width:auto;border-radius:3px;vertical-align:middle;margin-left:0.4em">'
-    url: "#"
+  - title: 'THE GRID (Wiki) <img src="/assets/images/the-grid-icon.jpg" alt="" style="height:2em;width:auto;border-radius:3px;vertical-align:middle;margin-left:0.4em">'
+    url: https://nanotheochem.github.io/the-grid/
